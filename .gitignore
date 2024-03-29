@@ -1,4 +1,8 @@
 node_modules
 .env
 .DS_Store
+<<<<<<< HEAD
 .VSCODE
+=======
+.VSCODE
+>>>>>>> 90337774e19b3621459d9649daa950894475a91c
