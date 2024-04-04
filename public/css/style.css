@@ -1,1 +1,90 @@
-# project-2
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+
+.login-button {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: larger;
+}
+
+.body {
+    min-height: 100%;
+}
+
+.main {
+    min-height: 100%;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aquamarine;
+    /* change vh for mobile */
+    height: 100%;
+    padding: 20px;
+    border-right: solid;
+}
+
+.section {
+    height: 100vh;
+    padding-bottom: 10px;
+}
+.left {
+    padding-left: 8%;
+}
+.post-item {
+    
+    border: solid;
+    border-color: rgb(182, 182, 182);
+    border-radius: 45px;
+    padding: 25px;
+    margin-right: 6%;
+    margin-left: 6%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+}
+
+.post-name{
+    
+    display: inline;
+}
+
+.user-name {
+    display: block;
+    padding-left: 15px;
+}
+
+.post-img {
+    display: inline-block;
+}
+.post-text-box {
+    padding-top: 35px;
+    padding-right:15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.post-text {
+    font-size: larger;
+}
+
+.comments {
+    display: flex;
+    justify-content: center;
+    border: solid;
+    border-color: rgb(182, 182, 182);
+    border-radius: 25px;
+    padding: 15px;
+    margin-bottom: 25px;
+}
+
