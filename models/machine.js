@@ -1,0 +1,36 @@
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection.js");
+
+class Machine extends Model {}
+
+Machine.init(
+    {
+        id: {
+            type: DataTypes.UUID.V4,
+            allowNull: false,
+            primaryKey: true,
+            defaultValue: sql.uuidV4
+        },
+        mname: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
+        uid: {
+            type: DataTypes.UUID.V4,
+            references: {
+                model: "user",
+                key: "id"
+            }  
+        }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: "machine",
+    }
+);
+
+module.exports = Machine;
