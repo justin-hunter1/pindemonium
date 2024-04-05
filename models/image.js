@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require("sequelize");
+const { Model, DataTypes, UUIDV4 } = require("sequelize");
 const sequelize = require("../config/connection.js");
 
 class Image extends Model {}
@@ -9,7 +9,7 @@ Image.init(
             type: DataTypes.UUID.V4,
             allowNull: false,
             primaryKey: true,
-            defaultValue: sql.uuidV4
+            defaultValue: UUIDV4
         },
         Image: {
             type: DataTypes.BLOB,
