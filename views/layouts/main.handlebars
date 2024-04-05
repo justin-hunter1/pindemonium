@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pindemonium</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body class="body">
+    <header class="header row">
+        {{#if !logged_in}}
+        <div class="two columns">
+            <button class="login-button">Login</button>
+        </div>
+        {{/if}}
+
+        {{#if logged_in}}
+        <div class="two columns">
+            <button>Home</button>
+            <button class="login-button">Logout</button>
+        </div>
+        {{/if}}
+        <div class="eight columns header-text">
+            <h1>PinDemonium</h1>
+            <h5>Your personal pinball headquarters</h5>
+        </div>
+
+        <div class="two columns">
+            <!-- this will be on your personal page
+            <button>Add a machine</button>
+            <button>Delete machine</button>
+            <button>New Highscore</button> -->
+        </div>
+        
+        
+        
+    </header>
+    <!-- this is where handlebars will change stuff -->
+    <main class="row main">
+        {{{body}}}
+    </main>
+    <script src="/js/login.js"></script>
+</body>
+</html>
