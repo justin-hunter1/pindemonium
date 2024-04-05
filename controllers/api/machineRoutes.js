@@ -16,9 +16,26 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-//make a put route to edit a high score
-
 //make a delete route to delete a machine
+router.delete('/:id', withAuth, async (req, res) =>{
+    try{
+        const machineData = await Machine.destroy({
+            where: {
+                id: req.params.id,
+                user_id: req.session.user_id,
+            },
+        });
+
+        if(!machineData) {
+            res.status(404).json({ message: 'No machines with this id!'});
+            return;
+        }
+
+        res.status(200).json(machineData);
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
 
 // make some other routes?
 
