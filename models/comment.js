@@ -6,7 +6,7 @@ class Comment extends Model {}
 Comment.init(
     {
         id: {
-            type: DataTypes.UUID.V4,
+            type: DataTypes.UUIDV4,
             allowNull: false,
             primaryKey: true,
             defaultValue: UUIDV4
@@ -16,14 +16,14 @@ Comment.init(
             allowNull: true
         },
         uid: {
-            type: DataTypes.UUID.V4,
+            type: DataTypes.UUIDV4,
             references: {
                 model: "user",
                 key: "id"
             } 
         },
         mid: {
-            type: DataTypes.UUID.V4,
+            type: DataTypes.UUIDV4,
             references: {
                 model: "machine",
                 key: "id"
