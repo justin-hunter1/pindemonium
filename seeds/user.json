@@ -1,0 +1,27 @@
+[
+  {
+    "fname": "Joe",
+    "lname": "Doe",
+    "email": "joed@jd.com"
+  },
+  {
+    "fname": "Gary",
+    "lname": "Dee",
+    "email": "helpme@x.com"
+  },
+  {
+    "fname": "Justin",
+    "lname": "H",
+    "email": "jh@bootcamp.com"
+  },
+  {
+    "fname": "Tim",
+    "lname": "L",
+    "email": "xmen@xmen.com"
+  },
+  {
+    "fname": "Will",
+    "lname": "K",
+    "email": "willthethrill@will.net"
+  }
+]
