@@ -7,7 +7,7 @@ const Image = require("./image.js");
 const Comment = require("./comment.js");
 
 User.hasOne(Password, {foreignKey: "uid", onDelete: "CASCADE"});
-Password.belongsto(User, {foreignKey: "uid"});
+Password.belongsTo(User, {foreignKey: "uid"});
 
 User.hasMany(Machine, {foreignKey: "uid", onDelete: "CASCADE"});
 Machine.belongsTo(User, {foreignKey: "uid"});

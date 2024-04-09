@@ -1,10 +1,23 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Password } = require('../../models');
+const bcrypt = require('bcrypt');
 
 // make a post route to '/' to create a new user
 router.post('/', async (req, res) => {
+    const t = await sequelize.transaction();
     try{
-        const userData = await User.create(req.body);
+        const userData = await User.create({
+            fname: req.body.fname,
+            lname: req.body.lname,
+            email: req.body.email,
+        }, { transaction: t });
+
+        const passwordData = await Password.create({
+            uid: userData.id,
+            password: req.body.password,
+        }, { transaction: t });
+
+        await t.commit();
 
         req.session.save(() => {
             req.session.user_id = userData.id;
@@ -13,6 +26,7 @@ router.post('/', async (req, res) => {
             res.status(200).json(userData);
         });
     } catch (err) {
+        await t.rollback();
         console.log(err);
         res.status(400).json(err);
     }
@@ -26,8 +40,11 @@ router.post('/login', async (req, res) => {
             res.status(400).json({ message: 'Incorrect email or password' });
             return;
         }
-
-        const validPassword = await userData.checkPassword(req.body.password);
+        const passwordData = await Password.findOne({ where: { uid: userData.id } });
+        if (!passwordData) {
+            res.status(400).json({ message: 'Something went wrong'})
+        }
+        const validPassword = await bcrypt.compare(req.body.password, passwordData.password)
 
         if (!validPassword) {
             res.status(400).json({ message: 'Incorrect email or password' });

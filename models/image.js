@@ -6,7 +6,7 @@ class Image extends Model {}
 Image.init(
     {
         id: {
-            type: DataTypes.UUID.V4,
+            type: DataTypes.UUIDV4,
             allowNull: false,
             primaryKey: true,
             defaultValue: UUIDV4
@@ -16,14 +16,14 @@ Image.init(
             allowNull: true
         },
         uid: {
-            type: DataTypes.UUID.V4,
+            type: DataTypes.UUIDV4,
             references: {
                 model: "user",
                 key: "id"
             }  
         },
         hsid: {
-            type: DataTypes.UUID.V4,
+            type: DataTypes.UUIDV4,
             references: {
                 model: "highscore",
                 key: "id"
