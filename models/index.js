@@ -25,9 +25,9 @@ Highscore.hasOne(Image, {foreignKey: "hsid", onDelete: "CASCADE"});
 Image.belongsTo(Highscore, {foreignKey: "hsid"});
 
 Machine.hasMany(Highscore, {foreignKey: "mid", onDelete: "CASCADE"});
-Highscore.belongsToMany(Machine, {foreignKey: "mid"});
+Highscore.belongsTo(Machine, {foreignKey: "mid"});
 
 Machine.hasMany(Comment, {foreignKey: "mid", onDelete: "CASCADE"});
-Comment.belongsToMany(Machine, {foreignKey: "mid"});
+Comment.belongsTo(Machine, {foreignKey: "mid"});
 
 module.exports = { User, Password, Machine, Highscore, Image, Comment };
