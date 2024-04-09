@@ -1,5 +1,5 @@
-const sequelize = require("../config/connection");
-const { User, Password, Machine, Highscore, Image, Comment } = require("../models/model.js");
+const sequelize = require("../config/connection.js");
+const { User, Password, Machine, Highscore, Image, Comment } = require("../models/index.js");
 
 const userSeedData = require("./user.json");
 const passwordSeedData = require("./password.json");

@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -19,27 +18,5 @@
     "node": "^18.20.1",
     "pg": "^8.11.5",
     "sequelize": "^6.37.2"
-=======
-  "name": "project-2",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "bcrypt": "^5.0.0",
-    "dotenv": "^8.2.0",
-    "connect-session-sequelize": "^7.0.4",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.2.0",
-    "pg": "^8.11.3",
-    "express-session": "^1.17.1",
-    "sequelize": "^6.33.0"
->>>>>>> 49251c1046bc7ae273b88f273cb84a339077b1d4
   }
 }
