@@ -7,7 +7,7 @@ class Password extends Model {}
 Password.init(
     {
         id: {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             allowNull: false,
             primaryKey: true,
             defaultValue: UUIDV4
@@ -17,7 +17,7 @@ Password.init(
             allowNull: false
         },
         uid: {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             references: {
                 model: "user",
                 key: "id"

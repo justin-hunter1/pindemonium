@@ -6,7 +6,7 @@ class Highscore extends Model {}
 Highscore.init(
     {
         id: {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             allowNull: false,
             primaryKey: true,
             defaultValue: UUIDV4
@@ -16,14 +16,14 @@ Highscore.init(
             allowNull: true
         },
         uid: {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             references: {
                 model: "user",
                 key: "id"
             }  
         },
         mid: {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             references: {
                 model: "machine",
                 key: "id"

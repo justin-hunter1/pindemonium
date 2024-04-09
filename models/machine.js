@@ -6,7 +6,7 @@ class Machine extends Model {}
 Machine.init(
     {
         id: {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             allowNull: false,
             primaryKey: true,
             defaultValue: UUIDV4
@@ -17,7 +17,7 @@ Machine.init(
             unique: true
         },
         uid: {
-            type: DataTypes.UUIDV4,
+            type: DataTypes.UUID,
             references: {
                 model: "user",
                 key: "id"
