@@ -6,7 +6,11 @@ class Image extends Model {}
 Image.init(
     {
         id: {
+<<<<<<< HEAD
             type: DataTypes.UUID,
+=======
+            type: DataTypes.UUIDV4,
+>>>>>>> 49251c1046bc7ae273b88f273cb84a339077b1d4
             allowNull: false,
             primaryKey: true,
             defaultValue: UUIDV4
@@ -16,14 +20,22 @@ Image.init(
             allowNull: true
         },
         uid: {
+<<<<<<< HEAD
             type: DataTypes.UUID,
+=======
+            type: DataTypes.UUIDV4,
+>>>>>>> 49251c1046bc7ae273b88f273cb84a339077b1d4
             references: {
                 model: "user",
                 key: "id"
             }  
         },
         hsid: {
+<<<<<<< HEAD
             type: DataTypes.UUID,
+=======
+            type: DataTypes.UUIDV4,
+>>>>>>> 49251c1046bc7ae273b88f273cb84a339077b1d4
             references: {
                 model: "highscore",
                 key: "id"
