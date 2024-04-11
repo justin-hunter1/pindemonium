@@ -15,45 +15,39 @@
 <body class="body">
     <header class="header row">
         <div class="two columns">
-            <button class="login-button">Home</button>
+            <button class="login-button">Login</button>
         </div>
 
         <div class="eight columns header-text">
-            <h1>PinDemonium</h1>
+            <h1 class="title-text">PINDEMONIUM</h1>
             <h5>Your personal pinball headquarters</h5>
         </div>
 
         <div class="two columns">
-
+            <!-- this will be on your personal page
+            <button>Add a machine</button>
+            <button>Delete machine</button>
+            <button>New Highscore</button> -->
         </div>
         
-
         
         
     </header>
     <!-- this is where handlebars will change stuff -->
-    <main class="row main">
-        <div class="container">
-            <button>Add a machine</button>
-            <button>Delete machine</button>
-            <button>New Highscore</button>
-        </div>
-        <div class="row">
-            <div class="one-half column">
-                <h4>Your highscores</h4>
-                <div class="post-item">
-                    <div class="post-text-box">
-                        <h5>Machine name</h5>
-                        <p>30,250</p>
-                        <img class="post-img" src="./public/images/320x200-placeholder.png" alt="placeholder Image">
-                    </div>
+    <main class="main">
+        <div>
+            <div class="row post-item">
+                <div class="one-third column">
+                    <h4 class="post-name">Machine name</h4>
                 </div>
-            </div>
-            <div class="one-half column">
-                <h4>Your Comments</h4>
-                <div class="post-item">
-                    <h5>Machine name</h5>
-                    <p>This is the comment you made on this machine</p>
+                <div class="two-thirds column">
+                    <!-- <div>
+                        <a href="/login" class="button">log in to add a comment or Highscore</a>
+                    </div> -->
+                    <div>
+                        <button>view comments</button>
+                        <button>view highscores</button>
+                    </div>
                 </div>
             </div>
         </div>
