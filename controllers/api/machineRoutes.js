@@ -7,7 +7,7 @@ router.post('/', withAuth, async (req, res) => {
     try{
         const newMachine = await Machine.create({
             ...req.body,
-            uid: req.session.user_id,
+            // uid: req.session.user_id,
         });
 
         res.status(200).json(newMachine);
@@ -22,7 +22,7 @@ router.delete('/:id', withAuth, async (req, res) =>{
         const machineData = await Machine.destroy({
             where: {
                 id: req.params.id,
-                uid: req.session.user_id,
+                // uid: req.session.user_id,
             },
         });
 
@@ -36,7 +36,5 @@ router.delete('/:id', withAuth, async (req, res) =>{
         res.status(500).json(err)
     }
 });
-
-// make some other routes?
 
 module.exports = router;
