@@ -1,0 +1,27 @@
+<h2>{{mname}}</h2>
+<div class="row">
+
+    <div class="one-half column">                       
+        <h5>Add a comment</h5>
+        <form action="" method="post">                                
+            <textarea id="comment-text" name="comment" rows="4" required></textarea><br>
+            <input type="submit" id="comment-submit" value="submit">
+        </form>
+        <h5>Comments</h5>
+
+        {{#each comments as |comment|}}
+        {{> machine-comments}}
+        {{/each}}
+
+    </div>
+    <div class="one-half column">
+        <h5>Highscores</h5>
+        <div class="post-item">
+            <div class="post-text-box">
+                <h5>Machine name</h5>
+                <p>30,250</p>
+                <img class="post-img" src="./public/images/320x200-placeholder.png" alt="placeholder Image">
+            </div>
+        </div>
+    </div>
+</div>
