@@ -1,6 +1,8 @@
 <div class="comments">
-    {{!-- <p class="commentor-name">{{email}}</p> --}}
+    {{!-- <p class="commentor-name">{{fname}}</p> --}}
     <p class="comment-text">{{comment}}</p>
-    <input type="hidden" id="comment-id" name="comment-id" value="{{id}}"/> 
-    <button id="deleteCommentBtn">Delete Comment</button>      
+    <input type="hidden" id="comment-id" name="comment-id" value="{{id}}"/>
+    {{#if logged_in}}
+    <button id="deleteCommentBtn">Delete Comment</button>
+    {{/if}}
 </div>
