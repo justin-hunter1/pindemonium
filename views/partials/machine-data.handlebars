@@ -1,38 +1,11 @@
-<div class="left one-half column">
-    <h5 class="post-name">{{machine.mname}}</h5>
-    <br>
-    <div>
-        {{!-- {{#if loggedIn}}
-        
-        <div>
-            <button>Add Comment</button>
-        </div>
-
-        {{/if}} --}}
-
-        {{!-- {{#if !loggedIn}}
-
-        <div>
-            <a href="/login" class="button">log in to add a comment or Highscore</a>
-        </div>
-        
-        {{/if}} --}}
+<div class="row post-item">
+    <div class="one-third column">
+        <h4 class="post-name">{{mname}}</h4>
     </div>
-</div>
-
-<div class="one-third column">
-    <h4 class="post-name">{{machine.mname}}</h4>
-</div>
-<div class="two-thirds column">
-    {{!-- {{if !logged_in}}
-
-    <div>
-        <a href="/login" class="button">log in to add a comment or Highscore</a>
-    </div>
-        
-    {{/if}} --}}
-    <div>
-        <button>view comments</button>
-        <button>view highscores</button>
+    <div class="two-thirds column">
+        <div>
+            <button>view comments</button>
+            <button>view highscores</button>
+        </div>
     </div>
 </div>
