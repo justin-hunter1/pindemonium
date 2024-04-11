@@ -1,13 +1,20 @@
 <h2>{{mname}}</h2>
 <div class="row">
 
-    <div class="one-half column">                       
+    <div class="one-half column">
+        {{#if logged_in}}                       
         <h5>Add a comment</h5>
         <form id="comment-submit">
             <input type="hidden" id="machine-id" name="machine-id" value="{{id}}"/>                                
             <textarea id="comment-text" name="comment" rows="4" required></textarea><br>
             <input type="submit" value="submit"/>
         </form>
+        {{else}}
+        <div class="">
+            <a href='/login' class="button login-button" id="loginBtn">Login to add a comment</a>
+        </div>
+        {{/if}}
+
         <h5>Comments</h5>
         <p>
         {{#each comments as |comment|}}
@@ -15,24 +22,11 @@
         {{/each}}
         </p>
     </div>
+
+
     <div class="one-half column">
-        <h5>Highscores</h5>
-        <div class="post-item">
-              <h5>
-                {{#each machine_highscore}}
-                {{fname}} {{lname}}
-                {{highscore.score}}
-                {{/each}}
-            </h5>
-            {{!-- {{#each highscores as |highscore|}}
-            {{> machine-highscores}}
-            {{/each}} --}}
-            {{!-- <div class="post-text-box">
-                <h5>{{mname}}</h5>
-                <p>{{score}}</p>
-                <img class="post-img" src="./public/images/320x200-placeholder.png" alt="placeholder Image">
-            </div> --}}
-        </div>
+    {{#if logged_in}}
+    <div>
         <h5>Add a Highscore</h5>
         <form id="highscore-submit">
             <input type="hidden", id="machine-id", name="machine-id", value="{{id}}"/>                                
@@ -41,6 +35,28 @@
             <br>
             <input type="submit" value="submit"/>
         </form>
+    </div>
+    {{else}}
+    <div class="">
+            <a href='/login' class="button login-button" id="loginBtn">Login to add a Highscore</a>
+    </div>
+    {{/if}}
+
+        <h5>Highscores</h5>
+        
+        {{#each machine_highscore}}
+            <div class="post-item">
+            <h5>                
+                {{fname}} {{lname}}
+            </h5>
+            <p>
+                {{highscore.score}}
+            </p>
+          </div>      
+        {{/each}}
+
+        
+
     </div>
 </div>
 

@@ -7,30 +7,36 @@
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/skeleton.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Outline&family=Train+One&family=Workbench&display=swap" rel="stylesheet">
 </head>
 
 <body class="body">
     <header class="header row">
         {{#if logged_in}}
         <div class="two columns">
-            <button><a href='/'>Home</a></button>
-            <button><a href='/profile'>My Profile</a></button>
-            <button class="login-button" id="logout">Logout</button>
+            <a href='/' class="button hbutton">Home</a>
+            <a href='/profile' class="button hbutton">My Profile</a>
         </div>
         {{else}}
         <div class="two columns">
-            <button class="login-button" id="loginBtn"><a href='/login'>Login</a></button>
+            <a href='/login' class="button hbutton login-button" id="loginBtn">Login</a>
         </div>
         {{/if}}
         <div class="eight columns header-text">
             <h1>PinDemonium</h1>
             <h5>Your personal pinball headquarters</h5>
         </div>
-
+        {{#if logged_in}}
+        <div class="two columns">
+            <button class="login-button hbutton" id="logout">Logout</button>
+        </div>
+        {{else}}
         <div class="two columns">
 
         </div>
-        
+        {{/if}}
         
         
     </header>
