@@ -17,17 +17,15 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 //route to edit a high score
-router.put('/:mid', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
     try {
         const updatedHighscore = await Highscore.update(
         {
             score: req.body.score,
-            uid: req.session.user_id,
+            // uid: req.session.user_id,
         },
         {
-            where: {
-                mid: req.params.mid,
-            }
+            where: { id: req.params.id }
         })
         res.status(200).json(updatedHighscore);
     } catch (err) {
