@@ -1,0 +1,40 @@
+<div class="left one-half column">
+    <h5 class="post-name">{{machine.mname}}</h5>
+    <p class="user-name">user name</p>
+    {{!-- <img class="post-img" src="./public/images/320x200-placeholder.png" alt="placeholder Image"> --}}
+    <br>
+    <div>
+        {{if logged_in}}
+        
+        <div>
+            <button>Add Comment</button>
+        </div>
+
+        {{/if}}
+
+        {{if !logged_in}}
+
+        <div>
+            <a href="/login" class="button">log in to add a comment or Highscore</a>
+        </div>
+        
+        {{/if}}
+    </div>
+</div>
+
+<div class="one-third column">
+    <h4 class="post-name">{{machine.mname}}</h4>
+</div>
+<div class="two-thirds column">
+    {{!-- {{if !logged_in}}
+
+    <div>
+        <a href="/login" class="button">log in to add a comment or Highscore</a>
+    </div>
+        
+    {{/if}} --}}
+    <div>
+        <button>view comments</button>
+        <button>view highscores</button>
+    </div>
+</div>
