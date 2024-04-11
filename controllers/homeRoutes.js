@@ -72,7 +72,7 @@ router.get('/machine/:id', async (req, res) => {
                 // },
                 {
                     model: Comment,
-                    attributes: ['comment'],
+                    attributes: ['comment', 'id'],
                 }
             ],
         });
