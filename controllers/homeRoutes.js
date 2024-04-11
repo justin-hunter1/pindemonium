@@ -61,7 +61,7 @@ router.get('/', async (req, res) => {
 router.get('/machine/:id', async (req, res) => {
     try{
         const machineData = await Machine.findByPk(req.params.id, {
-            include: [
+            include: [ {model: User, through: Highscore, as: 'machine_highscore' },
                 {
                     model: Highscore,
                     attributes: ['score'],
@@ -78,6 +78,7 @@ router.get('/machine/:id', async (req, res) => {
         });
 
         const machine = machineData.get({ plain: true })
+        console.log(machine);
         res.render('machine', {
             ...machine,
             logged_in: req.session.logged_in

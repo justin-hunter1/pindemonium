@@ -18,9 +18,15 @@
     <div class="one-half column">
         <h5>Highscores</h5>
         <div class="post-item">
-            {{#each highscores as |highscore|}}
+              <h5>
+                {{#each machine_highscore}}
+                {{fname}} {{lname}}
+                {{highscore.score}}
+                {{/each}}
+            </h5>
+            {{!-- {{#each highscores as |highscore|}}
             {{> machine-highscores}}
-            {{/each}}
+            {{/each}} --}}
             {{!-- <div class="post-text-box">
                 <h5>{{mname}}</h5>
                 <p>{{score}}</p>
