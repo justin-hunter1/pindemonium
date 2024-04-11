@@ -1,4 +1,4 @@
-const loginBtn = document.querySelector('.login-button');
+const loginBtn = document.querySelector('#loginBtn');
 const loginBtnHandler = async (event) => {
     event.preventDefault();
     document.location.replace('/login')
