@@ -28,8 +28,6 @@ const seedUserDatabase = async () => {
   for (let i = 0; i < highscoreSeedData.length; i++) {
     const { id: randomuid } = users[Math.floor(Math.random() * users.length)];
     const { id: randommid } = machines[Math.floor(Math.random() * machines.length)];
-
-
   
     const newhighscore = await Highscore.create({
       score: JSON.stringify(parseInt(highscoreSeedData[i].score)),
@@ -39,6 +37,17 @@ const seedUserDatabase = async () => {
     });
   }
 
+// add comments
+  for (let ii = 0; ii < commentSeedData.length; ii++) {
+    const { id: ruid } = users[Math.floor(Math.random() * users.length)];
+    const { id: rmid } = machines[Math.floor(Math.random() * machines.length)];
+  
+    const newcomment = await Comment.create({
+      comment: JSON.stringify(commentSeedData[ii].comment),
+      uid: ruid,
+      mid: rmid
+    });
+  }
 
 process.exit(0);
 };
