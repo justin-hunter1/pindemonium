@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Machine, Highscore, Image, User, Comment } = require('../models');
-const withAuth = require('../..utils/auth');
+const withAuth = require('../utils/auth');
 
 // insert get route(s) for the homepage
 router.get('/', async (req, res) => {

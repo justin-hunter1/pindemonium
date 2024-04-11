@@ -15,13 +15,6 @@ Machine.init(
             type: DataTypes.STRING,
             allowNull: false,
             unique: true
-        },
-        uid: {
-            type: DataTypes.UUID,
-            references: {
-                model: "user",
-                key: "id"
-            }  
         }
     },
     {
