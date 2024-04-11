@@ -1,7 +1,7 @@
 <div class="container">
     <button id="addMachineBtn">Add a machine</button>
     <button>Delete machine</button>
-    <button>New Highscore</button>
+    <button id="addHighscoreBtn">New Highscore</button>
 </div>
 <div class="row" id="addMachine" style="display: none;">
     <div class="one-half column">
@@ -12,6 +12,25 @@
             <br>
             <input type="submit" value="Submit"/>
         </form>
+    </div>
+</div>
+<div class="row" id="addHighscore" style="display: none;">
+    <div class="one-half column">
+        <h5>Add a Highscore</h5>
+        <div class="row">
+            <div class="six columns">
+                <label for="chooseMachine">Choose a Machine</label>
+                <select class="u-full-width" id="exampleRecipientInput">
+                    <option value="Option 1">Machine 1</option>
+                    <option value="Option 2">Machine 2</option>
+                    <option value="Option 3">Machine 3</option>
+                </select>
+            </div>
+            <div class="six columns">
+                <label for="highscore">Your Highscore</label>
+                <input class="u-full-width" type="text" placeholder="123456" id="highscore">
+            </div>
+        </div>
     </div>
 </div>
 <div class="row">
@@ -31,3 +50,4 @@
 </div>
 
 <script src="/js/addMachine.js"></script>
+<script src="/js/addHighscore.js"></script>

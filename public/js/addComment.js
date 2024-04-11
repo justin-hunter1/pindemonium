@@ -10,7 +10,7 @@ const addCommentHandler = async (event) => {
         });
 
         if(response.ok) {
-            document.location.replace(`/machine/${mid}`)
+            document.location.replace(`/machine/${mid}`);
         } else {
             alert(response.statusText);
         }
