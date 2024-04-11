@@ -11,16 +11,14 @@
 
 <body class="body">
     <header class="header row">
-        {{#if !logged_in}}
-        <div class="two columns">
-            <button class="login-button">Login</button>
-        </div>
-        {{/if}}
-
-        {{#if logged_in}}
+        {{#if loggedIn}}
         <div class="two columns">
             <button>Home</button>
             <button class="login-button">Logout</button>
+        </div>
+        {{else}}
+        <div class="two columns">
+            <button class="login-button">Login</button>
         </div>
         {{/if}}
         <div class="eight columns header-text">
