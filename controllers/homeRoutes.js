@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('highscore', async (req, res) => {
+router.get('/highscore', async (req, res) => {
     try{
         const highscoreData = await Highscore.findAll({
             include:[{ model: User }],
@@ -90,7 +90,7 @@ router.get('/machine/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
-            include: [{ model: Machine }, { model: Highscore }]
+            // include: [{ model: Machine }, { model: Highscore }]
         });
         const user = userData.get({ plain: true });
 

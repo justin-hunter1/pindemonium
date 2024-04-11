@@ -41,7 +41,7 @@ router.delete('/:id', withAuth, async (req, res) => {
         const highscoreData = await Highscore.destroy({
             where: {
                 id: req.params.id,
-                user_id: req.session.user_id
+                uid: req.session.user_id
             },
         });
 
