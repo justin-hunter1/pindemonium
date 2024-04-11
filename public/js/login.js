@@ -1,3 +1,9 @@
+const loginBtn = document.querySelector('.login-button');
+const loginBtnHandler = async (event) => {
+    event.preventDefault();
+    document.location.replace('/login')
+}
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
     const email = document.querySelector('#email').value.trim();
@@ -38,7 +44,8 @@ const signupFormHandler = async (event) => {
             alert(response.statusText);
         }
     }
-}
+};
 
+loginBtn.addEventListener('click', loginBtnHandler);
 document.querySelector('#login').addEventListener('submit', loginFormHandler);
 document.querySelector('#signup').addEventListener('submit', signupFormHandler);
