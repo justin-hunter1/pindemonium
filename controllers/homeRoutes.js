@@ -62,10 +62,10 @@ router.get('/machine/:id', async (req, res) => {
     try{
         const machineData = await Machine.findByPk(req.params.id, {
             include: [
-                // {
-                //     model: User,
-                //     attributes: ['name'],
-                // },
+                {
+                    model: Highscore,
+                    attributes: ['score'],
+                },
                 // {
                 //     model: Image,
                 //     attributes: ['Image'],

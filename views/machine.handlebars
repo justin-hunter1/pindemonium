@@ -18,13 +18,25 @@
     <div class="one-half column">
         <h5>Highscores</h5>
         <div class="post-item">
-            <div class="post-text-box">
+            {{#each highscores as |highscore|}}
+            {{> machine-highscores}}
+            {{/each}}
+            {{!-- <div class="post-text-box">
                 <h5>{{mname}}</h5>
-                <p>30,250</p>
+                <p>{{score}}</p>
                 <img class="post-img" src="./public/images/320x200-placeholder.png" alt="placeholder Image">
-            </div>
+            </div> --}}
         </div>
+        <h5>Add a Highscore</h5>
+        <form id="highscore-submit">
+            <input type="hidden", id="machine-id", name="machine-id", value="{{id}}"/>                                
+            <label for="highscore">Highscore:</label>
+            <input type="text" id="highscore" name="highscore" required/>
+            <br>
+            <input type="submit" value="submit"/>
+        </form>
     </div>
 </div>
 
 <script src="/js/addComment.js"></script>
+<script src="/js/addHighscore.js"></script>

@@ -7,7 +7,7 @@ router.post('/', withAuth, async (req, res) => {
     try {
         const newHighscore = await Highscore.create({
             ...req.body,
-            user_id: req.session.user_id,
+            uid: req.session.user_id,
         });
 
         res.status(200).json(newHighscore);
