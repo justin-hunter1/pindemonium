@@ -1,14 +1,11 @@
 [
   {
-    "name": "Sal",
-    "address": "200 Response St"
+    "filename": "Sal"
   },
   {
-    "name": "Lernantino",
-    "address": "404 Express Blvd"
+    "filename": "Lernantino"
   },
   {
-    "name": "Amiko",
-    "address": "500 Error Handling Lane"
+    "filename": "Amiko"
   }
 ]

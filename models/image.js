@@ -11,7 +11,7 @@ Image.init(
             primaryKey: true,
             defaultValue: UUIDV4
         },
-        Image: {
+        filename: {
             type: DataTypes.BLOB,
             allowNull: true
         },
