@@ -12,7 +12,7 @@ if (process.env.DB_URL) {
     process.env.DB_USER,
     process.env.DB_PASSWORD,
     {
-      host: "postgres://pindemonium_db_user:3WC08rocMQnojO7qmx3RjkwGwDBYaypA@dpg-cobm8jdjm4es739rqbf0-a/pindemonium_db",
+      host: "localhost",
       dialect: "postgres"
     }
   );
