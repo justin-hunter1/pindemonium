@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Highscore, } = require('../../models');
-const withAuth = require('../..utils/auth');
+const withAuth = require('../../utils/auth');
 
 //route to create a new high score
 router.post('/', withAuth, async (req, res) => {

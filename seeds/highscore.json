@@ -1,32 +1,38 @@
 [
   {
     "score": 123456,
-    "uid": "",
-    "mid": ""
-  },
-  {
-    "score": 234567,
-    "uid": "",
-    "mid": ""
+    "verified": false
   },
   {
     "score": 3456789,
-    "uid": "",
-    "mid": ""
+    "verified": true
   },
   {
     "score": 512346,
-    "uid": "",
-    "mid": ""
+    "verified": false
   },
   {
     "score": 25002500,
-    "uid": "",
-    "mid": ""
+    "verified": true
   },
   {
     "score": 99999100,
-    "uid": "",
-    "mid": ""
+    "verified": false
+  },
+  {
+    "score": 741258,
+    "verified": true
+  },
+  {
+    "score": 258963369,
+    "verified": true
+  },
+  {
+    "score": 8521478963,
+    "verified": false
+  },
+  {
+    "score": 789654123,
+    "verified": false
   }
 ]

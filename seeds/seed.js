@@ -9,24 +9,40 @@ const imageSeedData = require("./image.json");
 const commentSeedData = require("./comment.json");
 
 
-const seedDatabase = async () => {
+
+const seedUserDatabase = async () => {
   await sequelize.sync({ force: true });
-  const user = await User.bulkCreate(userSeedData);
+// creating seed user info and machine
+  const users = await User.bulkCreate(userSeedData);
+  const machines = await Machine.bulkCreate(machineSeedData);
 
-//   for (const { id } of drivers) {
-//     const newLicense = await License.create({
-//       driver_id: id,
-//     });
-//   }
-//   for (const car of carSeedData) {
-//     const newCar = await Car.create({
-//       ...car,
-// // Attach a random driver ID to each car
-//       driver_id: drivers[Math.floor(Math.random() * drivers.length)].id,
-//     });
-//   }
+// add default password to seeded users
+  for (const { id } of users) {
+    const newpassword = await Password.create({
+      uid: id, 
+      password: JSON.stringify(passwordSeedData)
+    });
+  }
 
-  process.exit(0);
+  // add highscore
+  for (let i = 0; i < highscoreSeedData.length; i++) {
+    const { id: randomuid } = users[Math.floor(Math.random() * users.length)];
+    const { id: randommid } = machines[Math.floor(Math.random() * machines.length)];
+
+
+  
+    const newhighscore = await Highscore.create({
+      score: JSON.stringify(parseInt(highscoreSeedData[i].score)),
+      verified: JSON.stringify(highscoreSeedData[i].verified),
+      uid: randomuid,
+      mid: randommid
+    });
+  }
+
+
+process.exit(0);
 };
 
-seedDatabase();
+
+
+seedUserDatabase();
