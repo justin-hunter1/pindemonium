@@ -9,8 +9,24 @@ const Comment = require("./comment.js");
 User.hasOne(Password, {foreignKey: "uid", onDelete: "CASCADE"});
 Password.belongsTo(User, {foreignKey: "uid"});
 
-User.belongsToMany(Machine, { through: { model: Highscore, unique: false }, foreignKey: "uid", onDelete: "CASCADE"});
-Machine.belongsToMany(User, { through: { model: Highscore, unique: false }, foreignKey: "mid", onDelete: "CASCADE"});
+User.belongsToMany(Machine, { 
+    through: { 
+        model: Highscore, 
+        unique: false 
+    },
+    as: 'user_highscore',
+    foreignKey: "uid", 
+    onDelete: "CASCADE"
+    });
+Machine.belongsToMany(User, { 
+    through: { 
+        model: Highscore, 
+        unique: false 
+    }, 
+    as: 'machine_highscore',
+    foreignKey: "mid", 
+    onDelete: "CASCADE"
+});
 
 User.hasMany(Image, {foreignKey: "uid", onDelete: "CASCADE"});
 Image.belongsTo(User, {foreignKey: "uid"});

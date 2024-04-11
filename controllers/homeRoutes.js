@@ -34,29 +34,29 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/highscore', async (req, res) => {
-    try{
-        const highscoreData = await Highscore.findAll({
-            include:[{ model: User }],
-            attributes: {
-                include: [
-                    [
-                        sequelize.literal(`SELECT machine.mname, highscore.score FROM highscore FULL OUTER JOIN machine ON highscore.mid = machine.id WHERE highscore.uid = '${req.params.id}'`),
-                        'userHighscore'
-                    ]
-                ]
-            },
-        });
-        const highscores = highscoreData.map((highscore) => highscore.get({plain: true}));
+// router.get('/profile', async (req, res) => {
+//     try{
+//         const highscoreData = await Highscore.findAll({
+//             // include:[{ model: User }],
+//             // attributes: {
+//             //     include: [
+//             //         [
+//             //             sequelize.literal(`SELECT machine.mname, highscore.score FROM highscore FULL OUTER JOIN machine ON highscore.mid = machine.id WHERE highscore.uid = '${req.params.id}'`),
+//             //             'userHighscore'
+//             //         ]
+//             //     ]
+//             // },
+//         });
+//         const highscores = highscoreData.map((highscore) => highscore.get({plain: true}));
 
-        res.render('profile', {
-            highscores,
-            logged_in: req.session.logged_in
-        });
-    } catch (err) {
-        res.status(500).json(err)
-    }
-});
+//         res.render('profile', {
+//             highscores,
+//             logged_in: req.session.logged_in
+//         });
+//     } catch (err) {
+//         res.status(500).json(err)
+//     }
+// });
 
 router.get('/machine/:id', async (req, res) => {
     try{
@@ -68,7 +68,7 @@ router.get('/machine/:id', async (req, res) => {
                 },
                 // {
                 //     model: Image,
-                //     attributes: ['Image'],
+                //     attributes: ['filename'],
                 // },
                 {
                     model: Comment,
@@ -90,9 +90,10 @@ router.get('/machine/:id', async (req, res) => {
 router.get('/profile', withAuth, async (req, res) => {
     try {
         const userData = await User.findByPk(req.session.user_id, {
-            // include: [{ model: Machine }, { model: Highscore }]
+            include: [{ model: Machine, through: Highscore, as: 'user_highscore' }]
         });
         const user = userData.get({ plain: true });
+        console.log(user)
 
         res.render('profile', {
             ...user,
