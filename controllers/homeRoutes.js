@@ -7,18 +7,18 @@ router.get('/', async (req, res) => {
     try{
         const machineData = await Machine.findAll({
             include: [
-                {
-                    model: User,
-                    attributes: ['name'],
-                },
-                {
-                    model: Image,
-                    attributes: ['Image'],
-                },
-                {
-                    model: Comment,
-                    attributes: ['comment'],
-                }
+                // {
+                //     model: User, through: Highscore, as: 'machine_highscore',
+                //     // attributes: ['email'],
+                // },
+            //     {
+            //         model: Image,
+            //         attributes: ['Image'],
+            //     },
+            //     {
+            //         model: Comment,
+            //         attributes: ['comment'],
+            //     }
             ],
         });
 
@@ -30,6 +30,30 @@ router.get('/', async (req, res) => {
         });
     } catch (err) {
         res.status(500).json(err);
+    }
+});
+
+router.get('highscore', async (req, res) => {
+    try{
+        const highscoreData = await Highscore.findAll({
+            include:[{ model: User }],
+            attributes: {
+                include: [
+                    [
+                        sequelize.literal(`SELECT machine.mname, highscore.score FROM highscore FULL OUTER JOIN machine ON highscore.mid = machine.id WHERE highscore.uid = '${req.params.id}'`),
+                        'userHighscore'
+                    ]
+                ]
+            },
+        });
+        const highscores = highscoreData.map((highscore) => highscore.get({plain: true}));
+
+        res.render('profile', {
+            highscores,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err)
     }
 });
 
