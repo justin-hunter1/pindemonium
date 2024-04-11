@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Machine, User, Highscore, Comment } = require('../../models');
-const withAuth = require('../..utils/auth');
+const withAuth = require('../../utils/auth');
 
 // make a post route to add a new machine
 router.post('/', withAuth, async (req, res) => {

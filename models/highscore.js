@@ -13,10 +13,16 @@ Highscore.init(
         },
         score: {
             type: DataTypes.STRING,
-            allowNull: true
+            allowNull: false
+        },
+        verified: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true,
+            defaultValue: false
         },
         uid: {
             type: DataTypes.UUID,
+            constraints: false,
             references: {
                 model: "user",
                 key: "id"
@@ -24,6 +30,7 @@ Highscore.init(
         },
         mid: {
             type: DataTypes.UUID,
+            constraints: false,
             references: {
                 model: "machine",
                 key: "id"
