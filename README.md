@@ -6,9 +6,9 @@ Is a application where you can keep track of your high scores across multiple ma
 [Link](https://pindemonium.onrender.com/)
 
 ## Visuals
-![alt text](<assets/images/Screenshot 2024-02-12 at 9.37.53 PM.png>)
-![alt text](<assets/images/Screenshot 2024-02-12 at 9.38.02 PM.png>)
-![alt text](<assets/images/Screenshot 2024-02-12 at 9.38.15 PM.png>)
+![alt text](<assets/images/homepage.png>)
+![alt text](<assets/images/login-signup.png>)
+![alt text](<assets/images/profile-page.png>)
 
 ## Usage
 Used to keep track of your high scores across multiple machine and record your play history, comment on different machines
